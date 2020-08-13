@@ -2,9 +2,19 @@
 
 //app was passed from index.js, its our express library 
 const routes = (app) => {
+
     app.route('/contact')
-        .get((req, res) =>
-        res.send(`GET request suceessful!!! wootwoot!!`))
+        .get((req, res, next) => {
+            //our custom middleware
+            console.log(`Request from: ${req.originalUrl}`)
+            console.log(`Request type: ${req.method}`)
+            next();
+        
+        }, (req,res, next) => {
+
+            res.send(`GET request suceessful!!! wootwoot!!`)
+        })
+        
         
         .post((req, res) =>
         res.send(`POST request successful!`));

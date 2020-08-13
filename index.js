@@ -2,10 +2,27 @@
 
 import express from 'express';
 import routes from './src/routes/crmRoutes';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser'
 
 
 const app = express();
 const PORT = 4000;
+
+//mongoose connection
+//this promise will make it so we wait for result when conecting to mogoDB
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/CRMdb', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+    //these options will make sure we dont get error when connecting?
+});
+
+//bodyparser setup
+//we are letting the bodyParser to parse the requests that are coming in 
+//to make it  readable to our API
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 
 routes(app);
