@@ -1,0 +1,10 @@
+//this file will tell babel what the presets are 
+//use enviorment preset and stage 0
+{
+    "presets": [
+        "env",
+        "stage-0"
+    ]
+
+
+}
