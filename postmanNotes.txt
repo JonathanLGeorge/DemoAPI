@@ -1,0 +1,5 @@
+you can type the url path in postman and click send
+
+this will give you the expected out put 
+
+you can also generate javascript code needed for any resquest type you might needed

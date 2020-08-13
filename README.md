@@ -9,7 +9,7 @@ You can get MogoDB for your compter at MongoDB.com
 
 optional dependencies 
 -body-parser : used to help parse the Json HTTP requests into into our server
-
+-nodemon : this will restart our server for us every time we make a change to our code
 
 
 What is a Restful API?
