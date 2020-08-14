@@ -29,3 +29,18 @@ in package.json you will see
     "start": "nodemon ./index.js --exec babel-node -e js"
 
 this is so when we run our server babel will transpile 
+
+
+MongoDB notes
+
+Database with collections
+
+collections have documents or objects
+
+documents look like JSON onjects
+
+inside each document you have the data with key-value pairs or arrays of items
+
+so our DB contacts, which are in collection , and each conract is a document
+
+robomongo.org can be used for
