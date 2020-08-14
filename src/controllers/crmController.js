@@ -35,3 +35,27 @@ export const getContacts = (req,res) => {
         res.json(contact)
     })
 }
+
+export const getContactWithID = (req,res) => {
+   
+
+    Contact.findById(req.params.ContactID, (err, contact) => {
+        //error handling
+        if (err) {
+            res.send(err);
+        }
+        res.json(contact)
+    })
+}
+
+export const updateContact = (req,res) => {
+   
+    //new: true will return the new object. usefindAndModify: false if for error and depricated messages
+    Contact.findOneAndUpdate({_id: req.params.ContactID}, req.body, {new: true, useFindAndModify: false}, (err, contact) => {
+        //error handling
+        if (err) {
+            res.send(err);
+        }
+        res.json(contact)
+    })
+}
