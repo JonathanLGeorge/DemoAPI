@@ -27,6 +27,12 @@ app.use(bodyParser.json());
 
 routes(app);
 
+//serving static files (img, pdf, txt, movies, ect...)
+//public is our static files folder
+app.use(express.static('public'));
+
+
+
 //you can see if we go to our url you can see this in the console
 app.get('/', (req, res) => 
     res.send(`Node and express server running on port ${PORT}`)
