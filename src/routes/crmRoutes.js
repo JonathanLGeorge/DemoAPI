@@ -1,7 +1,7 @@
 //this file is for our routes
 
 //you will see that inside the {} are the crmControllers we created
-import { addNewContact, getContacts, getContactWithID, updateContact} from '../controllers/crmController'
+import { addNewContact, getContacts, getContactWithID, updateContact, deleteContact} from '../controllers/crmController'
 
 
 //app was passed from index.js, its our express library 
@@ -26,17 +26,27 @@ const routes = (app) => {
         
         // .post((req, res) =>
         // res.send(`POST request successful!`));
+
+
+        //pots endpoint
         .post(addNewContact);
 
         //our PUT and DELETE wil update a specfic ID
     app.route('/contact/:contactID')
+        //used to get specific ID
         .get(getContactWithID)
 
         // .put((req,res) =>
         // res.send(`PUT request successful!`))
+
+        //updating info for contact
         .put(updateContact)
-        .delete((req, res) =>
-        res.send(`DELETE request successful!`))
+
+        // .delete((req, res) =>
+        // res.send(`DELETE request successful!`))
+
+        //deleting specific contact 
+        .delete(deleteContact)
 }
 //make sure to add this to our index
 export default routes;
