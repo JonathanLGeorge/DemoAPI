@@ -1,7 +1,7 @@
 //this file is for our routes
 
 //you will see that inside the {} are the crmControllers we created
-import { addNewContact} from '../controllers/crmController'
+import { addNewContact, getContacts} from '../controllers/crmController'
 
 
 //app was passed from index.js, its our express library 
@@ -17,10 +17,11 @@ const routes = (app) => {
             console.log(`Request type: ${req.method}`)
             next();
         
-        }, (req,res, next) => {
+        }, getContacts)
+            //(req,res, next) => {
 
-            res.send(`GET request suceessful!!! wootwoot!!`)
-        })
+            //res.send(`GET request suceessful!!! wootwoot!!`)
+        //})
         
         
         // .post((req, res) =>

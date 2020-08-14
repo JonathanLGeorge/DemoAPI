@@ -22,3 +22,16 @@ export const addNewContact = (req,res) => {
         res.json(contact)
     })
 }
+
+//dont forget to add this and addNewContact to our Routes
+export const getContacts = (req,res) => {
+   
+
+    Contact.find({},(err, contact) => {
+        //error handling
+        if (err) {
+            res.send(err);
+        }
+        res.json(contact)
+    })
+}
