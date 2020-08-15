@@ -43,4 +43,4 @@ inside each document you have the data with key-value pairs or arrays of items
 
 so our DB contacts, which are in collection , and each conract is a document
 
-robomongo.org can be used for
+look into robomongo.org for my tools and help
